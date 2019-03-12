@@ -18,4 +18,11 @@ class CorsairBattleScene extends Phaser.Scene {
         this.scene.launch("CorsairUIScene")
     }
 
+
+
+
+    /*
+
+
+    */
 }
