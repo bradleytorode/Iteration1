@@ -24,6 +24,7 @@ class PlayerShip extends Ship {
     constructor(scene, x, y, texture, hp, attackDamage, name, defence) {
         super(scene, x, y, texture, hp, attackDamage, name, defence)
 
+        //the scale is set to 2 to allow the players sprite to be bigger and this shows that it is closer than the enemy ship giving perspective in the game.
         this.setScale(2);
     }
 }

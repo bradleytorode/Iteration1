@@ -14,6 +14,8 @@ class ButtonMaster {
         this.hitZone.setInteractive();
         this.skill = skill;
 
+
+        //creates the text in the graphic, used Papyrus to make a pirate like effect on the writing.
         scene.add.text(x, y, skill.name, {
             fontSize: '32px',
             fontFamily: 'Papyrus',
@@ -22,7 +24,6 @@ class ButtonMaster {
 
         });
 
-        //this.text = new Phaser.GameObjects.Text(scene, x, y, MoveList[0].name, {})
 
         //Create HP Bars on either CorsairBattleScene or UI which can control the health of the player and the enemy.
     }

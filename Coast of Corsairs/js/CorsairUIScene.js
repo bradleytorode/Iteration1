@@ -7,6 +7,8 @@ class CorsairUIScene extends Phaser.Scene {
 
     create() {
 
+
+        //this code is commneted out and shown as what the boxes were originally created as. This was moved into the ButtonClass scene and replicated many times in the code below. Meaning I use less code overall.
         /*
         //Top Row of Abilities
         this.graphics.strokeRect(25, 400, 250, 100);
@@ -49,6 +51,8 @@ class CorsairUIScene extends Phaser.Scene {
 
     }
 
+
+    //uses the same method properties as the buttons, but allows sidebars to make the game menu like a table showing attack plans.
     sidebars() {
         this.graphics = this.add.graphics();
         this.graphics.lineStyle(3, 0xffffff);

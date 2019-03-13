@@ -1,8 +1,8 @@
 //An array to contain all the skills that the player and enemy could have. All stats being named appropriately.
 //TODO, create hit rating
 
-
-/*const skillList = [
+/*
+const skillList = [
     { name: "CannonBall", attackDamage: 20, effects: "None", hitChance: 1 }, //0
     { name: "FireBall", attackDamage: 10, effects: "Burn", hitChance: 1 }, //1
     { name: "VenomBall", attackDamage: 10, effects: "Poison", hitChance: 1 }, //2
@@ -14,10 +14,11 @@
     { name: "Frozen Orb", attackDamage: 20, effects: "Freeze", hitChance: 1 }, //8
     { name: "Destructive Shot", attackDamage: 100, effects: "None", hitChance: 1 } //9
 ]
-
 */
 
 
+
+//Skill List class created to make the abilities replicatible and allowing them to be reusable and understandable
 class SkillList {
     constructor(name, attackDamage, effects, hitChance) {
         this.name = name;
@@ -27,6 +28,7 @@ class SkillList {
     }
 }
 
+//Variables of each skill that the player and enemy AI will use.
 var cannonball = new SkillList("CannonBall", 20, "None", 1);
 var fireball = new SkillList("FireBall", 10, "Burn", 1);
 var venomball = new SkillList("VenomBall", 10, "Poison", 1);
