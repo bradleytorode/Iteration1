@@ -19,10 +19,4 @@ class CorsairBattleScene extends Phaser.Scene {
     }
 
 
-
-
-    /*
-
-
-    */
 }
