@@ -16,6 +16,8 @@
 ]
 
 */
+
+
 class SkillList {
     constructor(name, attackDamage, effects, hitChance) {
         this.name = name;

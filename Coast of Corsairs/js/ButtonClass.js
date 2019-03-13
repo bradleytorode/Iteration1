@@ -1,6 +1,6 @@
 //ability classes will be used to place the classes into the UI and allow the player to press on them to get abilites. Along with this it is used to manage enemies damage abilities. MOVENAME = Movelist 
 class ButtonMaster {
-    constructor(x, y, scene, text, skill, image) {
+    constructor(x, y, scene, skill) {
         this.graphics = scene.add.graphics();
         this.graphics.lineStyle(3, 0xffffff);
         this.graphics.fillStyle(0xc19a6b, 1);
@@ -12,17 +12,15 @@ class ButtonMaster {
         this.hitZone = scene.add.zone(x, y, 250, 100);
         this.hitZone.setOrigin(0);
         this.hitZone.setInteractive();
+        this.skill = skill;
 
-        this.add.text(x, y, SkillList.name, {
-            fontSize: '20px',
-            fontFamily: 'Arial',
-            colour: '#000000',
+        scene.add.text(x, y, skill.name, {
+            fontSize: '32px',
+            fontFamily: 'Papyrus',
+            color: '#000000',
             align: 'center'
 
-        }) = text;
-
-
-        this.skill = skill;
+        });
 
         //this.text = new Phaser.GameObjects.Text(scene, x, y, MoveList[0].name, {})
 
