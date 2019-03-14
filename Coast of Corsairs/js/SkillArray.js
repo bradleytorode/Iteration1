@@ -29,13 +29,13 @@ class SkillList {
 }
 
 //Variables of each skill that the player and enemy AI will use.
-var cannonball = new SkillList("CannonBall", 20, "None", 1);
-var fireball = new SkillList("FireBall", 10, "Burn", 1);
-var venomball = new SkillList("VenomBall", 10, "Poison", 1);
+var cannonball = new SkillList("Cannonball", 20, "None", 1);
+var fireball = new SkillList("Fireball", 10, "Burn", 1);
+var venomball = new SkillList("Venomball", 10, "Poison", 1);
 var focusedShot = new SkillList("Focused Shot", 50, "None", 1);
 var barrage = new SkillList("Barrage", 22, "None", 1);
 var explodingShot = new SkillList("Exploding Shot", 35, "None", 1);
 var infernalShot = new SkillList("Infernal Ball", 25, "Burn", 1);
-var fireAtWill = new SkillList("FIRE AT WILL", 80, "None", 1);
+var heavyShot = new SkillList("Heavy Shot", 80, "None", 1);
 var frozenOrb = new SkillList("Frozen Orb", 20, "Freeze", 1);
 var destructiveShot = new SkillList("Destructive Shot", 100, "None", 1);

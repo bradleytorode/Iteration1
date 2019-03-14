@@ -16,8 +16,8 @@ class ButtonMaster {
 
 
         //creates the text in the graphic, used Papyrus to make a pirate like effect on the writing.
-        scene.add.text(x, y, skill.name, {
-            fontSize: '32px',
+        scene.add.text(x + 15, y + 30, skill.name, {
+            fontSize: '28px',
             fontFamily: 'Papyrus',
             color: '#000000',
             align: 'center'
