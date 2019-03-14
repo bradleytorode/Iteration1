@@ -30,12 +30,12 @@ class CorsairUIScene extends Phaser.Scene {
         //condenses ability rows, showing variables. Showing the each column that I would like to use. This being the left side of buttons.
         var topLeftButton = new ButtonMaster(25, 400, this, cannonball)
         var bottomLeftButton = new ButtonMaster(25, 500, this, explodingShot)
-        topLeftButton.hitZone.on('pointerdown', this.damage, this)
+        topLeftButton.hitZone.on('pointerdown', useSkill(enemy), this)
 
         //middle column of abilities also planned as attacks
         var topMiddleButton = new ButtonMaster(275, 400, this, heavyShot)
         var bottomMiddleButton = new ButtonMaster(275, 500, this, barrage)
-        topMiddleButton.hitZone.on('pointerdown', this.damage, this)
+        topMiddleButton.hitZone.on('pointerdown', useSkill(enemy), this)
 
         //right hand column of abilities which will be planned for support skills such as bolster/repair and flee.
         var topMiddleButton = new ButtonMaster(525, 400, this, venomball)

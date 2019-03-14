@@ -26,6 +26,12 @@ class SkillList {
         this.effects = effects;
         this.hitChance = hitChance;
     }
+
+    attack(target) {
+        target.hp -= this.attackDamage;
+    }
+
+
 }
 
 //Variables of each skill that the player and enemy AI will use.
@@ -39,3 +45,7 @@ var infernalShot = new SkillList("Infernal Ball", 25, "Burn", 1);
 var heavyShot = new SkillList("Heavy Shot", 80, "None", 1);
 var frozenOrb = new SkillList("Frozen Orb", 20, "Freeze", 1);
 var destructiveShot = new SkillList("Destructive Shot", 100, "None", 1);
+
+
+
+

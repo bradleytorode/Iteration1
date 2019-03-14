@@ -27,6 +27,12 @@ class ButtonMaster {
 
         //Create HP Bars on either CorsairBattleScene or UI which can control the health of the player and the enemy.
     }
+
+    useSkill(target) {
+        this.skill.attack(target);
+    }
+
+
 }
 
 
