@@ -28,27 +28,32 @@ class CorsairUIScene extends Phaser.Scene {
 
 
         //condenses ability rows, showing variables. Showing the each column that I would like to use. This being the left side of buttons.
-        var topLeftButton = new ButtonMaster(25, 400, this, cannonball)
-        var bottomLeftButton = new ButtonMaster(25, 500, this, explodingShot)
-        topLeftButton.hitZone.on('pointerdown', useSkill(enemy), this)
+        topLeftButton = new ButtonMaster(25, 400, this, cannonball);
+        bottomLeftButton = new ButtonMaster(25, 500, this, explodingShot);
+
+        topLeftButton.hitZone.on('pointerdown', this.damage, this);
 
         //middle column of abilities also planned as attacks
-        var topMiddleButton = new ButtonMaster(275, 400, this, heavyShot)
-        var bottomMiddleButton = new ButtonMaster(275, 500, this, barrage)
-        topMiddleButton.hitZone.on('pointerdown', useSkill(enemy), this)
+        topMiddleButton = new ButtonMaster(275, 400, this, heavyShot);
+        bottomMiddleButton = new ButtonMaster(275, 500, this, barrage);
+
+        topMiddleButton.hitZone.on('pointerdown', this.damage, this);
 
         //right hand column of abilities which will be planned for support skills such as bolster/repair and flee.
-        var topMiddleButton = new ButtonMaster(525, 400, this, venomball)
-        var bottomMiddleButton = new ButtonMaster(525, 500, this, fireball)
+        topRightButton = new ButtonMaster(525, 400, this, venomball);
+        bottomRightButton = new ButtonMaster(525, 500, this, fireball);
 
-        this.sidebars()
+        this.sidebars();
 
+        
 
     }
 
     damage() {
-        
+        topLeftButton.useSkill(enemy)
+        console.log("enemyhit")
     }
+    
 
     //uses the same method properties as the buttons, but allows sidebars to make the game menu like a table showing attack plans.
     sidebars() {

@@ -6,14 +6,14 @@ class LoadGame extends Phaser.Scene {
 
     preload() {
         //load game assets, TODO - Load placeholder sprites, for the player character and enemy character(s).
-        this.load.image("player", "assets/shipPlaceholder.png")
-        this.load.image("enemy", "assets/shipPlaceholder.png")
+        this.load.image("player", "assets/shipPlaceholder.png");
+        this.load.image("enemy", "assets/shipPlaceholder.png");
 
     }
 
     create() {
         //this refers to the corsairBattleScene which will be set as a key in the corsairBattleScene to load it up.
-        this.scene.start("CorsairBattleScene")
+        this.scene.start("CorsairBattleScene");
     }
 
 }

@@ -8,16 +8,6 @@ class Ship extends Phaser.GameObjects.Sprite {
         this.defence = defence;
     }
 
-    //Attack used when attacking a target in the game.
-    attack(target) {
-        target.takeDamage(this.damage)
-    }
-
-    //Used to be called in attacktarget showing the enemy taking damage.
-    takeDamage(damage) {
-        this.hp -= (damage - this.defence)
-    }
-
 }
 
 class PlayerShip extends Ship {
