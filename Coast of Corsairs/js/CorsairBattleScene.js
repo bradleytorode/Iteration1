@@ -2,13 +2,12 @@
 class CorsairBattleScene extends Phaser.Scene {
     constructor() {
         super({ key: "CorsairBattleScene" });
-        var enemy, player;
     }
 
 
     create() {
         this.cameras.main.setBackgroundColor('rgba(0,0,255, 0.5)');
-
+        this.isPlayersTurn = true;
         //variable for the players ship and showing it being implemented into the game via the battle scene.
         player = new PlayerShip(this, 150, 300, "player", 70, "Pirate", 25)
         this.add.existing(player);
@@ -55,6 +54,15 @@ class CorsairBattleScene extends Phaser.Scene {
         */
         
         this.scene.launch("CorsairUIScene")
+    }
+
+    
+
+    update() {
+        if (!this.isPlayersTurn) {
+            console.log("Enemy Turn");//PICK AN ENEMY ATTACK
+        }
+
     }
 
 

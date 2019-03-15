@@ -12,6 +12,7 @@ class ButtonMaster {
         this.hitZone = scene.add.zone(x, y, 250, 100);
         this.hitZone.setOrigin(0);
         this.hitZone.setInteractive();
+        this.hitZone.parent = this;
         this.skill = skill;
 
 

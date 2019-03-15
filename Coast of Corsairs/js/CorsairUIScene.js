@@ -26,22 +26,30 @@ class CorsairUIScene extends Phaser.Scene {
         this.graphics.fillRect(525, 500, 250, 100);
         */
 
-
         //condenses ability rows, showing variables. Showing the each column that I would like to use. This being the left side of buttons.
-        topLeftButton = new ButtonMaster(25, 400, this, cannonball);
-        bottomLeftButton = new ButtonMaster(25, 500, this, explodingShot);
+        this.buttons = {
+            topLeftButton: new ButtonMaster(25, 400, this, cannonball),
+            bottomLeftButton: new ButtonMaster(25, 500, this, explodingShot),
+            topMiddleButton: new ButtonMaster(275, 400, this, heavyShot),
+            bottomMiddleButton: new ButtonMaster(275, 500, this, barrage),
+            topRightButton: new ButtonMaster(525, 400, this, venomball),
+            bottomRightButton: new ButtonMaster(525, 500, this, fireball),
+        }
+        
+        
 
-        topLeftButton.hitZone.on('pointerdown', this.damage, this);
+        this.buttons.topLeftButton.hitZone.on('pointerdown', function () {
+            player.attack(enemy, this.parent.skill)
+        });
 
         //middle column of abilities also planned as attacks
-        topMiddleButton = new ButtonMaster(275, 400, this, heavyShot);
-        bottomMiddleButton = new ButtonMaster(275, 500, this, barrage);
+        
 
-        topMiddleButton.hitZone.on('pointerdown', this.damage, this);
+        
+        //topMiddleButton.hitZone.on('pointerdown', BattleScene.damage, this);
 
         //right hand column of abilities which will be planned for support skills such as bolster/repair and flee.
-        topRightButton = new ButtonMaster(525, 400, this, venomball);
-        bottomRightButton = new ButtonMaster(525, 500, this, fireball);
+        
 
         this.sidebars();
 
@@ -49,10 +57,7 @@ class CorsairUIScene extends Phaser.Scene {
 
     }
 
-    damage() {
-        topLeftButton.useSkill(enemy)
-        console.log("enemyhit")
-    }
+    
     
 
     //uses the same method properties as the buttons, but allows sidebars to make the game menu like a table showing attack plans.
@@ -65,6 +70,15 @@ class CorsairUIScene extends Phaser.Scene {
         this.graphics.strokeRect(775, 390, 25, 210);
         this.graphics.fillRect(775, 390, 25, 210);
 
+    }
+
+    disableButtons() {
+        this.buttons.topLeftButton.hitZone.disableInteractive();
+
+    }
+
+    reenableButtons() {
+        this.buttons.topLeftButton.hitZone.setInteractive();
     }
 }
 

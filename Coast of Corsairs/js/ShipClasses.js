@@ -8,6 +8,26 @@ class Ship extends Phaser.GameObjects.Sprite {
         this.defence = defence;
     }
 
+    attack(target, skill) {
+        target.takeDamage(skill.attackDamage);
+        if (skill.effects == "Burn") {
+            
+        }
+        this.changeTurn();
+    }
+
+    takeDamage(amountOfDamage) {
+        this.hp -= amountOfDamage;
+    }
+
+    changeTurn() {
+        this.scene.isPlayersTurn = !this.scene.isPlayersTurn;
+        if (this.scene.isPlayersTurn) {
+            this.scene.manager.getScene('CorsairUIScene').reenableButtons();
+        } else {
+            this.scene.manager.getScene('CorsairUIScene').disableButtons();
+        }
+    }
 }
 
 class PlayerShip extends Ship {
@@ -25,4 +45,28 @@ class EnemyShip extends Ship {
 
         this.flipX = true;
     }
+
+    chooseAttack() {
+        var skill = //RANDOMLY SELECT SKILL FROM SKILL LIST
+        this.attack(player, skill);
+    }
 }
+
+/*////TURN MANAGER
+
+constructor(){
+    who's turn is it
+    who is a part of the turns
+}
+
+startTurn(target, skill, origin){
+    origin.attack(target, skill);
+    
+    if(origin.isBurned){
+        origin.takeBurnDamage();
+    }
+
+    origin.changeTurn();
+}
+
+*/

@@ -26,12 +26,6 @@ class SkillList {
         this.effects = effects;
         this.hitChance = hitChance;
     }
-
-    attack(target) {
-        target.hp -= this.attackDamage;
-    }
-
-
 }
 
 //Variables of each skill that the player and enemy AI will use.
